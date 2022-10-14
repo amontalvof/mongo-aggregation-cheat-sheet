@@ -17,6 +17,6 @@ db.persons.aggregate([
 
 db.persons.aggregate([
     {
-        $group: { _id: '$eyeColor' },
+        $group: { _id: '$company.location.country' },
     },
 ]);
