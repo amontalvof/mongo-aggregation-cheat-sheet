@@ -14,3 +14,8 @@ db.persons.aggregate([
     // stage 2
     { $group: { _id: { eyeColor: '$eyeColor', age: '$age' } } },
 ]);
+
+db.persons.aggregate([
+    { $group: { id: { age: '$age', eyeColor: '$eyeColor' } } },
+    { $match: { 'id.age': { $gt: 30 } } },
+]);
